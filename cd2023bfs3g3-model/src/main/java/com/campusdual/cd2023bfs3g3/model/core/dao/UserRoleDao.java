@@ -8,14 +8,14 @@ import com.ontimize.jee.server.dao.common.ConfigurationFile;
 import com.ontimize.jee.server.dao.jdbc.OntimizeJdbcDaoSupport;
 
 
-@Repository(value = "UserRoleDao")
 @Lazy
+@Repository(value = "UserRoleDao")
 @ConfigurationFile(
 	configurationFile = "dao/UserRoleDao.xml",
 	configurationFilePlaceholder = "dao/placeholders.properties")
 public class UserRoleDao extends OntimizeJdbcDaoSupport {
-	public static final String URO_ID       = "uro_id";
-	public static final String USR_ID       = "usr_id";
-	public static final String ROL_ID       = "rol_id";
-	public static final String ACTIVED      = "actived";
+
+	public static final String ID = "user_";
+	public static final String ID_USER_ROLE = "id_user_role";
+	public static final String ID_ROLENAME = "id_rolename";
 }

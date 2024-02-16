@@ -1,40 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<JdbcEntitySetup xmlns="http://www.ontimize.com/schema/jdbc"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.ontimize.com/schema/jdbc http://www.ontimize.com/schema/jdbc/ontimize-jdbc-dao.xsd"
-	catalog="" schema="${mainschema}" table="usr_user" datasource="mainDataSource"
-	sqlhandler="dbSQLStatementHandler">
-	<DeleteKeys>
-		<Column>usr_id</Column>
-	</DeleteKeys>
-	<UpdateKeys>
-		<Column>usr_id</Column>
-	</UpdateKeys>
-	<GeneratedKey>usr_id</GeneratedKey>
-	<Queries>
-		<Query id="default">
-			<Sentence>
+<JdbcEntitySetup
+    xmlns="http://www.ontimize.com/schema/jdbc"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.ontimize.com/schema/jdbc http://www.ontimize.com/schema/jdbc/ontimize-jdbc-dao.xsd"
+    catalog="" schema="${mainschema}" table="tuser"
+    datasource="mainDataSource" sqlhandler="dbSQLStatementHandler">
+    <DeleteKeys>
+        <Column>user_</Column>
+    </DeleteKeys>
+    <UpdateKeys>
+        <Column>user_</Column>
+    </UpdateKeys>
+    <Queries>
+        <Query id="default">
+            <AmbiguousColumns>
+                <AmbiguousColumn name="user_" prefix="t" databaseName="user_" />
+            </AmbiguousColumns>
+            <ValidColumns>
+                <Column>user_</Column>
+                <Column>password</Column>
+                <Column>name</Column>
+                <Column>surname</Column>
+                <Column>email</Column>
+                <Column>nif</Column>
+                <Column>userblocked</Column>
+                <Column>lastpasswordupdate</Column>
+                <Column>firstlogin</Column>
+                <Column>city</Column>
+                <Column>phone</Column>
+                <Column>address</Column>
+                <Column>renovationdate</Column>
+                <Column>id_rolename</Column>
+                <Column>active</Column>
+            </ValidColumns>
+            <Sentence>
                 <![CDATA[
                     SELECT
                         #COLUMNS#
                     FROM
-                        ${mainschema}.usr_user
+                        ${mainschema}.tuser t
+                       JOIN ${mainschema}.tuser_role tr
+                       ON t.user_ = tr.user_
                     #WHERE#
-                    #ORDER#
                 ]]>
-			</Sentence>
-		</Query>
-		<Query id="login">
-			<Sentence>
+            </Sentence>
+        </Query>
+        <Query id="deletable">
+            <AmbiguousColumns>
+                <AmbiguousColumn name="user_" prefix="t" databaseName="user_" />
+            </AmbiguousColumns>
+            <ValidColumns>
+                <Column>user_</Column>
+                <Column>id_rolename</Column>
+            </ValidColumns>
+            <Sentence>
                 <![CDATA[
                     SELECT
-                        #COLUMNS#, usr_down_date
+                        #COLUMNS#, COUNT(g.state) AS activeGym
                     FROM
-                        ${mainschema}.usr_user
+                        ${mainschema}.tuser t
+                       JOIN ${mainschema}.tuser_role tr
+                       ON t.user_ = tr.user_
+                       LEFT JOIN ${mainschema}.gyms g
+                       ON g.user_= tr.user_
+                       AND g.state = true
                     #WHERE#
-                    #ORDER#
+                    GROUP BY t.user_, tr.id_rolename
                 ]]>
-			</Sentence>
-		</Query>
-	</Queries>
+            </Sentence>
+        </Query>
+        <Query id="login">
+            <ValidColumns>
+                <Column>user_</Column>
+                <Column>password</Column>
+                <Column>name</Column>
+                <Column>surname</Column>
+                <Column>email</Column>
+                <Column>nif</Column>
+                <Column>userblocked</Column>
+                <Column>lastpasswordupdate</Column>
+                <Column>firstlogin</Column>
+                <Column>city</Column>
+                <Column>phone</Column>
+                <Column>address</Column>
+                <Column>active</Column>
+            </ValidColumns>
+            <Sentence>
+                <![CDATA[
+                    SELECT 
+                        #COLUMNS#
+                    FROM                        
+                        ${mainschema}.tuser
+                    #WHERE#
+                ]]>
+            </Sentence>
+        </Query>
+    </Queries>
 </JdbcEntitySetup>

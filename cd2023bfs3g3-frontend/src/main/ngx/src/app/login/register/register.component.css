@@ -1,0 +1,38 @@
+/* .o-app-sidenav-sidenav {
+    display: none !important;
+}
+
+.o-app-sidenav-sidenav .o-scroll .mat-drawer .mat-sidenav .ng-tns-c20-0 .ng-trigger .ng-trigger-transform .ng-star-inserted .mat-drawer-closed .mat-drawer-side {
+    visibility: hidden !important;
+} */
+
+.o-radio {
+    width: 100px;
+    height: 10px;
+}
+
+#radio {
+    height: 40px;
+}
+
+.row-especial {
+    height: 45px;
+}
+p{
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+}
+.radio-edit {
+    display:flex;
+    flex-direction: row;
+    gap: 30px;
+    
+}
+
+.input-padding {
+    margin-right: 20px;
+}
+
+
+
+

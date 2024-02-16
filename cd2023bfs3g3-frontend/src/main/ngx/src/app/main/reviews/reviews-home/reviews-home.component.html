@@ -1,0 +1,68 @@
+<div class="form-reviews">
+  <p class ="info__reviews">
+    {{"INFO_REVIEW0" | oTranslate }}
+    <span class="title__reviews">WheGym</span>
+    {{"INFO_REVIEW1" | oTranslate }} <br>
+    {{"INFO_REVIEW2" | oTranslate }}<br>
+    {{"INFO_REVIEW3" | oTranslate }} 💪✨
+  </p>
+  <div class="container_reviews">
+    <o-form
+      #form
+      class="form__review"
+      service="reviews"
+      entity="review"
+      keys="reviewid"
+      header-actions="U;D"
+      show-header-navigation="no"
+      confirm-exit="no"
+      (onInsert)="insertRedirect($event)"
+      ignore-default-navigation="yes"
+    >
+
+      <h2>{{ "REVIEW" | oTranslate }}</h2>
+      <o-combo
+        attr="gymid"
+        label="select"
+        fxFlex="50"
+        service="gyms"
+        entity="gym"
+        keys="gymid"
+        columns="gymid;name"
+        visible-columns="name"
+        value-column="gymid"
+        class="input-padding"
+        sort="ASC"
+        required="yes"
+        searchable="yes"
+      >
+      </o-combo>
+      <div>
+        <div class="rating" >
+        <mat-icon style="cursor: pointer" *ngFor="let star of stars; let i = index" (click)="rates(i + 1)">
+                  {{ i < currentRate ? 'star' : 'star_border' }}
+        </mat-icon>
+        <!-- <input type="hidden" id="rateInput" [attr.rate]="rate" /> -->
+        <o-text-input #inputrate attr="rate" id="rateInput" oHidden required="yes"></o-text-input>
+        </div>
+      </div>
+        <!-- <div class="slider">
+          <mat-icon color="primary">star</mat-icon>
+          <o-slider
+            id="star"
+            attr="rate"
+            read-only="no"
+            thumb-label="true"
+            tick-interval="5"
+            max="5"
+            min="1"
+            color="primary"
+            required="yes"
+            [data] = "getRate()"
+          >
+          </o-slider>
+        </div> -->
+      <o-textarea-input attr="content" label="content" fxFlex></o-textarea-input>
+    </o-form>
+  </div>
+</div>

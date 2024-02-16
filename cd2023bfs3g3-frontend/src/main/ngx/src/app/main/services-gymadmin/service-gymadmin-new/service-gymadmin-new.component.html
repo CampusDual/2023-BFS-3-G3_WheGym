@@ -1,0 +1,81 @@
+<o-form #form
+  service="gymservices"
+  entity="myService"
+  keys="serviceid"
+  header-actions="R;I;U;D"
+  show-header-navigation="no"
+>
+  <o-row>
+    <!-- Name Column -->
+    <o-column fxFlex>
+      <o-row>
+        <o-text-input
+          class="input-padding"
+          attr="name"
+          fxFlex="40"
+          required="yes"
+        ></o-text-input>
+      </o-row>
+
+      <!-- Price Column -->
+      <o-row>
+        <o-integer-input
+          attr="price"
+          class="input-padding"
+          fxFlex="19.5"
+          label="pricelabel"
+          grouping="no"
+        ></o-integer-input>
+      
+        <!-- Duration Column -->
+        <o-integer-input
+          attr="duration"
+          fxFlex="19.5"
+          label="durationlabel"
+        ></o-integer-input>
+      </o-row>
+
+      <!-- Description Column -->
+      <o-row>
+        <o-textarea-input
+          attr="description"
+          fxFlex
+        ></o-textarea-input>
+      </o-row>
+      
+      <o-row>
+          <o-combo
+            attr="categoryid"
+            appearance="outline"
+            label="category"
+            fxFlex="50"
+            service="categories"
+            entity="category"
+            keys="categoryid"
+            columns="categoryid;name"
+            visible-columns="name"
+            value-column="categoryid"
+            class="input-padding"
+            searchable="yes"
+          ></o-combo>
+      </o-row>
+      
+      <o-row>
+        <o-combo
+          attr="gymid"
+          appearance="outline"
+          label="gym"
+          fxFlex="50"
+          service="gyms"
+          entity="myGym"
+          keys="gymid"
+          columns="gymid;name"
+          visible-columns="name"
+          value-column="gymid"
+          class="input-padding"
+          searchable="yes"
+        ></o-combo>
+      </o-row>
+    </o-column>
+  </o-row>
+</o-form>

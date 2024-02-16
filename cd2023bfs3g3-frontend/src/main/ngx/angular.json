@@ -38,6 +38,11 @@
                 "input": "node_modules/ontimize-web-ngx/assets",
                 "output": "/assets"
               },
+              {
+                "glob": "**/*",
+                "input": "node_modules/ontimize-web-ngx-report/assets",
+                "output": "/assets"
+              },
               "src/manifest.webmanifest"
             ],
             "styles": [
@@ -51,14 +56,7 @@
             "buildOptimizer": false,
             "sourceMap": true,
             "optimization": false,
-            "namedChunks": true,
-            "allowedCommonJsDependencies": [
-              "dom-to-image",
-              "google-libphonenumber",
-              "moment",
-              "js-sha256",
-              "base64-js"
-            ]
+            "namedChunks": true
           },
           "configurations": {
             "compose": {
@@ -254,6 +252,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "app"
 }

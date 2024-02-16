@@ -1,0 +1,38 @@
+.bshadow {
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(5px 5px 5px #222222);
+    opacity: .5;
+    margin-top: 20px;
+  }
+  
+  .ontimize-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  
+  .buttonqr {
+    padding: 12px 12px 12px 12px;
+    height: 60px;
+    width: 140px;
+    box-shadow: 5px 7px 15px rgba(0, 0, 0, 0.351);
+  }
+
+  .info__payment{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color:grey;
+    text-shadow:1px 1px 3px  #B2A000;
+    text-align: center;
+   
+  }
+  #status{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color:grey;
+    text-shadow:1px 1px 3px  #B2A000;
+    text-align: center;
+  }

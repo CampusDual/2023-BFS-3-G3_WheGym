@@ -1,0 +1,73 @@
+<div class="container_profile">
+  <div class="card-profile">
+  <o-form #form attr="profile_detail" service="users" entity="user" fxLayout="column"
+show-header="yes" header-actions="U" keys="user_" keys-sql-types="VARCHAR"
+show-header-navigation="no" (onDataLoaded)="formInit()">
+ 
+<o-row>
+  <o-column title="USER_PROFILE"  class="login-column">
+    <o-row>  
+      <o-text-input class="input-padding" attr="user_"  required="yes" width="180px" read-only="yes" (input)="onInputChanged()"></o-text-input>
+      <o-slide-toggle color= "primary" id="activeid" style="display: none;" class="input-padding" attr="active" label="{{ 'active' | oTranslate }}" [data]="getValue()" read-only="yes" (input)="onInputChanged()"
+      ></o-slide-toggle>
+      <o-date-input class="input-date" attr="renovationdate" read-only="yes" label="{{'RENOVATION_DATE' | oTranslate }}"></o-date-input>
+    </o-row>
+    <o-row>
+      <o-text-input class="input-padding" attr="name" width="375px" required="yes" (input)="onInputChanged()"></o-text-input>
+      <o-text-input class="input-padding" attr="surname" width="375px" required="yes" (input)="onInputChanged()"></o-text-input>
+    </o-row>
+    <o-row>
+      <o-nif-input class="input-padding"attr="nif" label="NIF" data="53780330M" width="375px" required="yes" (input)="onInputChanged()"></o-nif-input>
+    </o-row>
+    <o-row class="row-elements">
+      <o-text-input class="input-padding" attr="address" width="375px" required="no" (input)="onInputChanged()"></o-text-input>
+      <o-text-input class="input-padding" attr="city" width="375px" required="no" (input)="onInputChanged()"></o-text-input>
+    </o-row>
+    <o-row>
+      <o-phone-input class="input-padding" attr="phone" width="375px" countries="+34" data="+34" read-only="no" required="yes" (input)="onInputChanged()"></o-phone-input>
+      <o-email-input attr="email" width="375px" (input)="onInputChanged()"></o-email-input>
+    </o-row>
+   
+    <o-row>
+      <o-password-input  class="input-padding" attr="password"  required="yes" width="375px" show-password-button="yes"  [validators]="validatorArray" (onChange)="reviewMatches($event)" (input)="onInputChanged()"></o-password-input>
+      <o-password-input   id="confirm"
+      class="this.className"
+      attr="passwordconfirm"
+      width="375px"
+      required="yes"
+      show-password-button="yes"
+      [validators]="validatorArray"
+      (input)="onInputChanged()"
+      *ngIf="showPasswordConfirm">
+        <o-validator error-name="mustMatch" error-text="Password must match"></o-validator>
+      </o-password-input>
+    </o-row>
+    <p>{{'password_required'|oTranslate}}</p>
+    <div class="ontimize-buttons">
+      <o-button attr="basic1" type="STROKED" label="DELETE" layout-padding color="primary" (click)="deleteUser()"></o-button>
+    </div>  
+  </o-column>
+ 
+ 
+</o-row>
+
+</o-form>
+  </div>
+</div>
+
+<o-column title="{{'CANCEL_TITLE' | oTranslate }}" appearance='outline' class="column-subscribe">
+  <o-form #form attr="profile_detail" service="payments" entity="payment" fxLayout="column"
+    show-header="yes" header-actions="D" undo-button="no" keys-sql-types="VARCHAR"
+    show-header-navigation="no" show-header-actions-text="no" (onDelete)="deleteRedirect($event)">
+  <o-row fxFlex="100">
+    <div class="column-subscribe">
+      <p class="subs-txt">
+        {{"INFO_CANCEL0" | oTranslate }}
+        {{"INFO_CANCEL1" | oTranslate }}
+        {{"INFO_CANCEL2" | oTranslate }}
+      </p>
+      <br>
+    </div>
+  </o-row>
+</o-form>
+</o-column>

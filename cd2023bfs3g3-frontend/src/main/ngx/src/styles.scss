@@ -1,40 +1,446 @@
 /* You can add global styles to this file, and also import other style files */
-.o-form-layout-manager {
-  .o-form {
-    form {
-      height: 100%;
-    }
-  }
+#photo > div > div > img {
+  height: 15rem;
+  width: 15rem;
+  border-radius: 10rem;
 }
 
-/* Form toolbar background color */
-.o-form-toolbar .o-form-toolbar-header.mat-toolbar {
+.images {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+  gap: 16px;
+
+  right: 20%;
+}
+
+.o-image .o-image-content.o-image-auto-fit .o-image-display-container > img {
+  border-radius: 8px;
+
+  width: 100%;
+
+  height: auto;
+
+  box-shadow: 0px 0px 30px #000;
+}
+
+///////////////////botón servicios
+.mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
+  background-color: #B2A000 ;
+ }
+
+ 
+ .mat-stroked-button .mat-button-base .mat-primary .ng-star-inserted .buttonqr{
+  padding: 50px;
+}
+ 
+
+/////////////////////////////  detalle del grid usuario usuario//////////////////////
+
+ .containerGridDetail{
+ 
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+}
+ .container_log_datos{
+  display: flex;
+
+  gap:10px;
+ 
+ }
+ .container_log_datos>.logo{
+   width: 150px;
+   height: 150px;
+   
+
+ }
+ 
+ .titulo{
+  margin-top:1.5rem;
+  font-size: 2rem;
+  text-shadow: 8px 8px 8px #b2a00093;
+ }
+ 
+ 
+ .datos{
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+ }
+
+ 
+.spanDescription{
+  font-size: 1.5rem;
+  color:#B2A000;
+}
+ 
+ .images_carro{
+ 
+   margin-top: 2rem;
+    display: grid;
+ 
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+ 
+    gap: 10px;}
+ 
+ 
+    .image1{
+      width: 90%;
+    }
+ 
+    ///////////////////////GYM DETAIL FORM///////////////////////
+    .containerform{
+      display: flex;
+      // flex-direction: column;
+      margin:5px
+    }
+    .datosform{
+      display: flex;
+      flex-direction: column;
+      margin-top: 40px;
+      gap:30px;
+      width: 80%;
+      justify-content: center;
+      align-content: center;
+    }
+    .logoform{
+      width: 500px;
+      height: 500px;
+      margin: -16px;
+     }
+.title_info{
+  align-items: center;
+}
+
+.o-table-menu-button .mat-menu-trigger.mat-icon-button .mat-button-base .ng-tns-c13-1 .ng-star-inserted{
+  display: none;
+}
+
+.galery_title{
+  margin-top: 3rem;
+}
+
+.application-layout-content-wrapper:has(.hijo)  {
+  height: 93%;
+  background-image: linear-gradient(to bottom, rgba(112, 111, 105, 0.2) 0%, rgba(54, 53, 42, 0.56) 100%), url("^assets/images/fondo-login.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #ECEFF1;
+}
+
+
+.o-card-menu-item {
+    margin: 2%;
+    padding: 6px;
+}
+.o-card-menu-item .mat-button {
+  background-color:#B2A000 !important;
+  color:white !important;
+}
+.o-card-menu-item .o-card-menu-item-icon{
+  color:#B2A000 !important;
+}
+//////////////////////////REGISTER///////////////////////
+.container-register {
+  background-image:  url("assets/images/fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; 
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  
+}
+.card-register {
+  background-color: #ECEFF1;
+  width: 800px;
+  padding: 10px 35px 50px 45px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 30px #000;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  border:#B2A000 solid 2px;
+  font-size: 14px;
+
+}
+
+.whegymimg {
+object-fit: contain;
+height: 150px;
+position: absolute;
+right: 50px;
+top: 50px;
+}
+
+//boton footer
+.card-register .o-form-toolbar {
+  flex: none;
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.o-form-toolbar .o-form-toolbar-header {
+  padding: 0 50px 0 16px !important;
+  border: none;
+  box-shadow: none;
   background-color: transparent;
+
+}
+
+// scroll registro
+.o-container-scroll .o-scroll{
+  overflow: hidden !important;
 }
 
 
-.o-column > div.o-container .o-container-scroll.o-container-gap,
-.o-row > div.o-container .o-container-scroll.o-container-gap {
-  padding: 15px;
+
+.o-container-title .ng-star-inserted{
+  font-size: 2.2rem !important;
 }
 
-.avatar.o-image {
-  width: 200px;
-  height: 200px;
 
-  .o-image-content.o-image-auto-fit {
-    .o-image-display-container {
-      img {
-        border-radius: 50%;
-        aspect-ratio: auto 200/200;
-        width: 200px;
-        height: 200px;
-      }
-    }
 
-    .o-image-form-field {
-      position: absolute;
-      bottom: -42px;
-    }
+//////////botton grid ver más /////////
+div.o-grid-footer .ng-star-inserted{
+background-color:#B2A000;
+box-shadow: none;
+margin-left: 45%;
+text-align: center;
+}
+.mat-raised-button .mat-button .mat-button-base{
+  padding:15px 15px;
+}
+
+div.o-grid-footer .ng-star-inserted  .mat-button-wrapper{
+  color:white !important;
+}
+
+.mat-list-base .mat-list-item.mat-3-line, .mat-list-base .mat-list-option.mat-3-line {
+  height: 88px;
+  background-color:#ECEFF1;
+  margin: 15px auto;
+  padding: 10px;
+  border-radius: 10px;
+  width: 60%;
+  border:1px solid #B2A000; 
+  box-shadow: 0px 0px 15px #000;
+}
+.o-list-container .mat-list .mat-3-line .o-custom-list-item{
+  background-color: transparent;
+  font-size: 1.2rem;
+  color:black;
+}
+
+// scroll inicio
+.o-app-sidenav .o-app-sidenav-container .o-app-sidenav-content{
+  overflow: hidden !important;
+}
+
+//reviews
+
+.form-reviews {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  flex-direction: column;
+  margin: 40px;
+  gap: 50px;  
+}
+
+.slider {
+  margin-right: 200px;
+}
+
+.container_reviews{
+  background-color: #ECEFF1;
+  width: 800px;
+  padding: 10px 35px 50px 45px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 30px #000;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  border:#B2A000 solid 2px;
+  font-size: 14px;
+
+}
+.info__reviews{
+  font-size: 2rem;
+  font-weight: bold;
+  color:grey;
+  text-shadow:1px 1px 3px  #B2A000;
+}
+.title__reviews{
+ color:#B2A000;
+ font-size: 2.2rem;
+}
+.container_reviews .o-form-toolbar {
+  flex: none;
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  z-index: 10;
+}
+
+.o-form-toolbar .o-form-toolbar-header {
+  padding: 0 50px 0 16px !important;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+
+}
+
+
+.o-container-scroll .o-scroll{
+  overflow: hidden !important;
+}
+
+.container-payment {
+  position: relative;
+}
+
+// .mat-form-field.icon-field .mat-form-field-suffix .icon-btn, .mat-form-field.icon-field .mat-form-field-suffix .mat-icon-button, .mat-form-field.icon-field .mat-form-field-suffix .mat-icon:not([svgicon]) {
+//   display: none;
+// }
+
+ 
+////////// payment css///////////////
+.mat-dialog-container:has(.container-payment),
+.container-payment {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(45deg, rgba(209, 195, 89, 0.5), #e5e4dd98);
+  margin:0;
+  padding: 0;
+}
+ 
+ 
+ .o-form-content-wrapper:has(.container_card){
+display: flex;
+align-items: center !important;
+justify-content: center !important;
+place-content:center !important
+ }
+.pay_titel{
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+.container_card{
+ 
+background: rgba(255, 255, 255, 0.72);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+backdrop-filter: blur(7.7px);
+border: 1px solid rgba(255, 255, 255, 0.19);
+ padding:20px 35px ;
+  border-radius: 20px;
+  width: 50%;
+    height: 65%;
+  display: flex !important;
+  justify-content: center !important;
+  text-align: center !important;
+  flex-direction: column !important;
+  box-sizing: border-box;
+  margin:70px 0 14px 0;
+ 
+ 
+}
+ 
+.numberCard_cvv{
+  display: flex;
+  flex-wrap: nowrap;
+}
+//image visa
+.cardpng{
+  width: 150px;
+  position: absolute;
+  bottom:20px;
+  right: 50px;
+}
+ 
+// icono fecha
+ .mat-form-field.icon-field .mat-form-field-suffix .mat-icon:not([svgicon]){
+  display: none;
+ }
+
+ ////////////PROFILE/////////////
+.container_profile {
+    background-color: #ECEFF1;
+    width: 800px;
+    padding: 10px 35px 50px 45px;
+    border-radius: 10px;
+   // box-shadow: 0px 0px 30px #000;
+    display: flex;
+    justify-content: center;
+    position: relative;
+   // border:#B2A000 solid 2px;
+    font-size: 14px;
+   
   }
+  .card-profile .o-form-toolbar {
+    z-index: 10;
+    flex: none;
+    display: block;
+    position: absolute;
+    bottom:58px;
+    right: 396px
+  }
+
+ .column-subscribe .o-form-toolbar button:last-child{
+    display: none;
+  }
+
+  .column-subscribe .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools span{
+    color: rgb(204, 0, 0);
+  }
+
+#service o-list-item {
+    cursor: context-menu !important;
+}
+#access o-list-item {
+    cursor: context-menu !important;
+}
+
+.container-payment .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools{
+  position: absolute;
+  bottom: 20%;
+  margin-right: 80%;
+
+ }
+ .input-padding {
+  margin-right: 20px;
+}
+
+
+.column-subscribe .o-form-toolbar .o-form-toolbar-header {
+  position:absolute;
+  bottom:18px;
+  right: 100px;
+  z-index: 10;
+  font-size: 2rem;
+ 
+ 
+}
+.column-subscribe .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools button.o-form-toolbar-button.mat-icon-button.mat-button-base{
+  border:3px inset red;
+  padding: 5px;
+  width: 50px;
+  height:50px;
+  border-radius: 50%;
+  background-color: antiquewhite;
 }

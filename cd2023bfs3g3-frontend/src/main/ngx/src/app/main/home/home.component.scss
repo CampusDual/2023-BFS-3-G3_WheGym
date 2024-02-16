@@ -1,3 +1,84 @@
-.bg {
-  background-color: darkred;
+.mat-button .mat-button-base .ng-star-inserted{
+    margin-top: 10px;
+}
+
+.list-text {
+    background-color: white;
+    padding: 12px;
+}
+
+.footer {
+    width: 100%;
+    margin-left: -16px;
+    padding-right: 32px;
+    background-color:#d4d6df;
+    background: linear-gradient(to bottom, #d4d6df, #5a5959);
+    border:#B2A000 solid 2px;
+    box-shadow: 0px 0px 30px #000;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: -8px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns:1fr 50px 1fr 50px 1fr;
+
+}
+.image_logo{
+    display: flex;
+    justify-content: center;
+}
+.grid img{
+    object-fit: contain;
+    height: 150px;  
+}
+ul{
+    list-style: none;
+    text-align: justify;
+    font-size: 0.6rem;
+}
+p{
+    font-size: 0.8rem;
+    text-align: justify;
+}
+
+.fa {
+    padding: 5px;
+    font-size: 15px;
+    width: 15px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+    background:#B2A000;
+    color: white;
+}
+.networks{
+    display:flex;
+    justify-content: space-evenly;
+    margin-right: 25px;
+}
+.contact{
+    margin-left: 30px;
+}
+
+.hijo {
+    position: relative;
+}
+.title_home{
+    position: absolute;
+    top: 5px;
+    left:38%;
+    font-size:2rem;
+}
+
+.copy{
+  
+    margin-top: 50px;
+    color: #B2A000;
 }

@@ -1,13 +1,48 @@
-import { MenuRootItem } from 'ontimize-web-ngx';
+import { MenuRootItem } from "ontimize-web-ngx";
 
 export const MENU_CONFIG: MenuRootItem[] = [
-  { id: 'home', name: 'HOME', icon: 'home', route: '/main/home' },
+  { id: "home", name: "HOME", icon: "home", route: "/main/home" },
   {
-    id: 'admin', name: 'ADMIN', tooltip: 'ADMIN', icon: 'admin_panel_settings',
-    items: [
-      { id: 'roles', name: 'ROLES', tooltip: 'ROLES', route: '/main/admin/roles', icon: 'supervisor_account' },
-      { id: 'users', name: 'USERS', tooltip: 'USERS', route: '/main/admin/users', icon: 'person' },
-    ]
+    id: "gyms",
+    name: "MY_GYMS",
+    route: "/main/gyms",
+    icon: "fitness_center",
+
   },
-  { id: 'logout', name: 'LOGOUT', route: '/login', icon: 'power_settings_new', confirm: 'yes' }
+  {
+    id: "gymsuser",
+    name: "GYMS",
+    route: "/main/gymsuser",
+    icon: "directions_run",
+    pathMatch: "full"
+  },
+  {
+    id: "reviews",
+    name: "REVIEWS",
+    route: "/main/reviews/new",
+    icon: "reviews",
+    pathMatch: "full"
+  },
+  {
+    id: "accesscard",
+    name: "ACCESS_CARD",
+    route: "/main/accesscard",
+    icon: "qr_code",
+    pathMatch: "full"
+
+  },
+  {
+    id: "servicesgymadmin",
+    name: "MY_SERVICES",
+    route: "/main/gymservices",
+    icon: "edit_document",
+    pathMatch: "full"
+  },
+  {
+    id: "logout",
+    name: "LOGOUT",
+    route: "/login",
+    icon: "power_settings_new",
+    confirm: "yes",
+  },
 ];

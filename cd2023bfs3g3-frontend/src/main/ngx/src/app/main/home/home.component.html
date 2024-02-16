@@ -1,5 +1,96 @@
-<div fxLayout="row" layout-padding fxLayoutAlign="center center">
+<!-- <div fxLayout="row" layout-padding fxLayoutAlign="center center">
   <p>
     Ontimize web seed application home component
   </p>
+</div> -->
+<!-- <div  class ="hijo"fxLayout="row" layout-padding fxLayoutAlign="center center">
+  
+    <o-card-menu-item class="admin" button-text="MY_GYMS" title="" button-color="white"
+  icon="fitness_center" route="/main/gyms">
+  </o-card-menu-item>
+    <o-card-menu-item  id="service" button-text= "MY_SERVICES" title="" 
+  icon="edit_document" route= "/main/gymservices">
+  </o-card-menu-item>
+    <o-card-menu-item class="usuario" button-text="GYMS" title=""
+  icon="directions_run" route="/main/gymsuser">
+  </o-card-menu-item>
+    <o-card-menu-item id="access" button-text="QR_CODE" title=""
+  icon="qr_code" route="/main/accesscard">
+  </o-card-menu-item>
+</div> -->
+
+<!--Admin-->
+<div id="service" class ="hijo">
+  <h2 class=" title_home">{{'BEST_REVIEWS_ADMIN' | oTranslate}}</h2>
+  <o-list #list2 service="gyms" entity="gymReview" refresh-button ="no" quick-filter="no"
+  delete-button ="no" keys="gymid" columns="gymid;content;rate;date;user_;name;photo" row-height="large">
+
+
+    <o-list-item *ngFor="let row of list2.dataArray">
+      <o-image class ="image10" attr="photo" data="{{ row.photo }}" read-only = "true" show-controls = "false" 
+      type="image"
+      empty-image="assets/images/no-image.png"
+      image-type="base64"
+      style="height: 200;"
+      ></o-image>
+      <o-list-item-text title="{{ row.name }}" primary-text="{{ getStars(row.rate) }}" secondary-text="{{ row.date | date}}: {{ row.content }}" class="list-text">
+      </o-list-item-text>
+    </o-list-item>
+
+  </o-list>
+</div>
+
+<div id="access" class ="hijo">
+  <h2 class=" title_home">{{'BEST_REVIEWS' | oTranslate}}</h2>
+  <o-list #list attr="reviews" service="reviews" entity="review" refresh-button ="no" quick-filter="no"
+  delete-button ="no" keys="reviewid" columns="reviewid;content;rate;date;user_;gymid;photo;name" row-height="large">
+
+
+    <o-list-item *ngFor="let row of list.dataArray">
+      <o-image class ="image10" attr="photo" data="{{ row.photo }}" read-only = "true" show-controls = "false" 
+      type="image"
+      empty-image="assets/images/no-image.png"
+      image-type="base64"
+      style="height: 200;"
+      ></o-image>
+      <o-list-item-text title="{{ row.name }}" primary-text="{{ getStars(row.rate) }}" secondary-text="{{ row.date | date}}: {{ row.content }}" class="list-text">
+      </o-list-item-text>
+    </o-list-item>
+
+  </o-list>
+
+</div>
+
+<div class="footer">
+  <div class="grid">
+    <div>
+      <div class="image_logo"><img src="../../../assets/images/logo.png"></div>
+      <ul class="networks">
+        <li><a href="https://www.facebook.com/profile.php?id=61553997020601" target="_blank" class="fa fa-facebook"></a></li>
+        <li><a href="#" class="fa fa-twitter"></a></li>
+        <li><a href="#" class="fa fa-instagram"></a></li>
+        <li><a href="https://youtu.be/R__nFBcim3g" target="_blank" class="fa fa-youtube"></a></li>
+      </ul>
+    </div>
+    <div></div>
+    <div>
+      <h4>{{'ABOUT_US' | oTranslate}}</h4>
+      <p>{{'TEXT_ABOUT' | oTranslate}}</p>
+      <p class="copy">
+        <span>{{ 'FOOTER_CREATED_BY' | oTranslate }}</span>
+        <span> &copy; 2023 </span>
+        <span>{{ 'FOOTER_RIGHTS' | oTranslate }}</span>
+      </p>
+    </div>
+    <div></div>
+    <div>
+      <h4>{{'CONTACT' | oTranslate}}</h4>
+      <ul class="contact">
+        <li><i class="fa fa-envelope" ></i>&nbsp;wheGym@wheGym.com</li>
+        <li><i class="fa fa-phone" ></i>&nbsp;+34 645 879 345</li>
+        <li><i class="fa fa-map-marker" ></i>&nbsp;Fonte das Abelleiras, s/n · 36310 Vigo, Pontevedra</li>
+      </ul>
+    </div>
+  </div>
+ 
 </div>
